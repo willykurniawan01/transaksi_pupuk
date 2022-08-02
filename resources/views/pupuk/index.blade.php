@@ -17,37 +17,39 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <table id="pupukTable" class="table table-striped table-bordered" style="width:100%">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Kode</th>
-                                            <th>Nama Pupuk</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($pupuk as $item)
+                                <div class="table-responsive">
+                                    <table id="pupukTable" class="table table-striped table-bordered" style="width:100%">
+                                        <thead>
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->kode }}</td>
-                                                <td>{{ $item->nama }}</td>
-                                                <td>
-                                                    <div class="btn-group">
-                                                        <form method="POST" action="{{ route("pupuk.destroy",$item->id) }}">
-                                                            @csrf
-                                                            @method("delete")
-                                                            <button class="btn btn-danger" type="submit">
-                                                                <i class="bi bi-trash"></i>
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </td>
-                                            </tr>    
-                                        @endforeach
-                                    </tbody>
-                                
-                                </table>
+                                                <th>No</th>
+                                                <th>Kode</th>
+                                                <th>Nama Pupuk</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($pupuk as $item)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $item->kode }}</td>
+                                                    <td>{{ $item->nama }}</td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <form method="POST" action="{{ route("pupuk.destroy",$item->id) }}">
+                                                                @csrf
+                                                                @method("delete")
+                                                                <button class="btn btn-danger" type="submit">
+                                                                    <i class="bi bi-trash"></i>
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>    
+                                            @endforeach
+                                        </tbody>
+                                    
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

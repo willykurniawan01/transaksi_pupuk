@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title',"Transaksi | Create")
+@section('title',"Transaksi | Edit")
 @push('style')
 @endpush
 @section('content')
